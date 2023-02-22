@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
-  "homepage": "https://kwm0304.github.io/shop-shop/",
+  
   "engines": {
     "node": "16.17.0"
   },
