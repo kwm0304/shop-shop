@@ -1,7 +1,8 @@
 {
   "name": "mern-client",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "https://kwm0304.github.io/shop-shop/",
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "@apollo/client": "^3.3.7",
