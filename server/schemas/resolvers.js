@@ -1,8 +1,11 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Product, Category, Order } = require('../models');
 const { signToken } = require('../utils/auth');
+const stripe = require('stripe')('sk_test_4eC39HqLyWDarjtT1zdp7dc');
+const url = new URL(context.headers.referer).origin;
 
 const resolvers = {
+  
   Query: {
     categories: async () => {
       return await Category.find();
@@ -50,7 +53,47 @@ const resolvers = {
       }
 
       throw new AuthenticationError('Not logged in');
-    }
+    },
+    checkout: async (parent, args, context) => {
+      const oder = new Order({ products: args.products });
+      const { products } = await order.populate('products');
+      const line_items = [];
+
+      for (let i = 0;i < products.length; i++) {
+        //generate product id
+        const product = await stripe.products.create({
+          name: products[i].name,
+          description: products[i].description,
+          images: [`${url}/images/${products[i].image}`]
+        });
+
+        //generate price id using product id
+        const price = await stripe.prices.create({
+          product: product.id,
+          unit_amount: products[i].price * 100,
+          currency: 'usd',
+        });
+
+        //add price id to the line items array
+        /* This loops over the products from the order model and puses a price ID for each one into a new line_items array. Multiplying by 100 because Stripe
+        stores prices in cents, not dollars.*/
+        line_items.push({
+          price: price.id,
+          quantity: 1
+        });
+        const session = await stripe.checkout.sessions.create({
+          payment_method_types: ['card'],
+          line_items,
+          mode: 'payment',
+          success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+          cancel_url: `${url}`
+        });
+    
+        return { sesion: session.id };
+    
+      }
+    },
+    
   },
   Mutation: {
     addUser: async (parent, args) => {
