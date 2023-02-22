@@ -14,8 +14,7 @@
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build",
-    "predeploy" : "npm run build",
-    "deploy": "gh-pages -d build"
+    "heroku-postbuild" : "cd client && npm run build"
   },
   "keywords": [],
   "author": "",
@@ -23,5 +22,6 @@
   "devDependencies": {
     "concurrently": "^5.1.0",
     "gh-pages": "^5.0.0"
-  }
+  },
+  "heroku-run-build-script" : true
 }

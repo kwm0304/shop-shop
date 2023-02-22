@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.be2b856d.chunk.css",
-    "main.js": "/static/js/main.0a0292d4.chunk.js",
-    "main.js.map": "/static/js/main.0a0292d4.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.c62b8046.js",
-    "runtime-main.js.map": "/static/js/runtime-main.c62b8046.js.map",
-    "static/js/2.a4695085.chunk.js": "/static/js/2.a4695085.chunk.js",
-    "static/js/2.a4695085.chunk.js.map": "/static/js/2.a4695085.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.52e76e17000f79727fedbbba1c39caa1.js": "/precache-manifest.52e76e17000f79727fedbbba1c39caa1.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.be2b856d.chunk.css.map": "/static/css/main.be2b856d.chunk.css.map",
-    "static/js/2.a4695085.chunk.js.LICENSE.txt": "/static/js/2.a4695085.chunk.js.LICENSE.txt",
-    "static/js/main.0a0292d4.chunk.js.LICENSE.txt": "/static/js/main.0a0292d4.chunk.js.LICENSE.txt",
-    "static/media/spinner.gif": "/static/media/spinner.ab497855.gif"
+    "main.css": "/shop-shop/static/css/main.be2b856d.chunk.css",
+    "main.js": "/shop-shop/static/js/main.fe788909.chunk.js",
+    "main.js.map": "/shop-shop/static/js/main.fe788909.chunk.js.map",
+    "runtime-main.js": "/shop-shop/static/js/runtime-main.8304d904.js",
+    "runtime-main.js.map": "/shop-shop/static/js/runtime-main.8304d904.js.map",
+    "static/js/2.a4695085.chunk.js": "/shop-shop/static/js/2.a4695085.chunk.js",
+    "static/js/2.a4695085.chunk.js.map": "/shop-shop/static/js/2.a4695085.chunk.js.map",
+    "index.html": "/shop-shop/index.html",
+    "precache-manifest.b6ba3a8265cad36dfa5a48eec7c32577.js": "/shop-shop/precache-manifest.b6ba3a8265cad36dfa5a48eec7c32577.js",
+    "service-worker.js": "/shop-shop/service-worker.js",
+    "static/css/main.be2b856d.chunk.css.map": "/shop-shop/static/css/main.be2b856d.chunk.css.map",
+    "static/js/2.a4695085.chunk.js.LICENSE.txt": "/shop-shop/static/js/2.a4695085.chunk.js.LICENSE.txt",
+    "static/js/main.fe788909.chunk.js.LICENSE.txt": "/shop-shop/static/js/main.fe788909.chunk.js.LICENSE.txt",
+    "static/media/spinner.gif": "/shop-shop/static/media/spinner.ab497855.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.c62b8046.js",
+    "static/js/runtime-main.8304d904.js",
     "static/js/2.a4695085.chunk.js",
     "static/css/main.be2b856d.chunk.css",
-    "static/js/main.0a0292d4.chunk.js"
+    "static/js/main.fe788909.chunk.js"
   ]
 }
