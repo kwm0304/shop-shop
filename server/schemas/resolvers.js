@@ -2,7 +2,7 @@ const { AuthenticationError } = require('apollo-server-express');
 const { User, Product, Category, Order } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyWDarjtT1zdp7dc');
-const url = new URL(context.headers.referer).origin;
+
 
 const resolvers = {
   
@@ -55,7 +55,8 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
     checkout: async (parent, args, context) => {
-      const oder = new Order({ products: args.products });
+      const url = new URL(context.headers.referer).origin;
+      const order = new Order({ products: args.products });
       const { products } = await order.populate('products');
       const line_items = [];
 
