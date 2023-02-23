@@ -19,15 +19,15 @@ const StoreProvider = ({ value = [], ...props}) => {
         cart: [],
         cartOpen: false,
         categories: [],
-        currentCategory: ''
+        currentCategory: '',
     });
     //use this to confirm it works
     
-    return <Provider value={[state,dispatch]} {...props} />;
+    return <Provider value={[state, dispatch]} {...props} />;
 };
 
 const useStoreContext = () => {
-    return useContext(StoreContext)
+    return useContext(StoreContext);
 };
 
 export { StoreProvider, useStoreContext };

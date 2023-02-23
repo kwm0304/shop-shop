@@ -10,7 +10,9 @@ import { idbPromise } from '../../utils/helpers';
 method to update state. B/c we only need the categories array, we destructure it out*/
 function CategoryMenu() {
   const [state, dispatch] = useStoreContext();
+
   const { categories } = state;
+
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
   
   
@@ -36,10 +38,10 @@ function CategoryMenu() {
     }
   },[categoryData, loading, dispatch]);
 
-  const handleClick = id => {
+  const handleClick = (id) => {
     dispatch({
       type: UPDATE_CURRENT_CATEGORY,
-      currentCategory: id
+      currentCategory: id,
     })
   }
   return (
