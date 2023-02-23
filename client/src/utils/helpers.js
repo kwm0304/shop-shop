@@ -25,7 +25,7 @@ export function idbPromise(storeName, method, object) {
     //handle any errors with connecting
     request.onerror = function(e) {
       console.log('There was an error')
-    }
+    };
 
     //on db open success
     request.onsuccess = function(e) {
