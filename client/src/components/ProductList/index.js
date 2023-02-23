@@ -22,7 +22,7 @@ function ProductList() {
       //we will store it in our global state object
       dispatch({
         type: UPDATE_PRODUCTS,
-        products: data.products
+        products: data.products,
       });
 
       //but let's also take each product and save it to IndexedDB using the helper function
@@ -36,7 +36,7 @@ function ProductList() {
         //use retrieved data to set global state for offline browsing
         dispatch({
           type: UPDATE_PRODUCTS,
-          products: products
+          products: products,
         })
       })
     }
@@ -47,14 +47,14 @@ function ProductList() {
       return state.products;
     }
   
-    return state.products.filter(product => product.category._id === currentCategory);
+    return state.products.filter((product) => product.category._id === currentCategory);
   }
   return (
     <div className="my-2">
       <h2>Our Products:</h2>
       {state.products.length ? (
         <div className="flex-row">
-          {filterProducts().map(product => (
+          {filterProducts().map((product) => (
             <ProductItem
               key={product._id}
               _id={product._id}

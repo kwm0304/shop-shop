@@ -28,7 +28,7 @@ useQuery() to set product data to the global state object*/
   useEffect(() => {
     //already in the global store
     if (products.length) {
-      setCurrentProduct(products.find(product => product._id === id));
+      setCurrentProduct(products.find((product) => product._id === id));
     }
     //retrieved from server
      else if (data) {
@@ -46,7 +46,7 @@ useQuery() to set product data to the global state object*/
       idbPromise('products', 'get').then((indexedProducts) => {
         dispatch({
           type: UPDATE_PRODUCTS,
-          products: indexedProducts
+          products: indexedProducts,
         })
       })
     }
