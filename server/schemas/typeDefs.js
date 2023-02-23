@@ -30,6 +30,10 @@ const typeDefs = gql`
     orders: [Order]
   }
 
+  type Checkout {
+    session: ID
+  }
+
   type Auth {
     token: ID
     user: User
@@ -52,9 +56,6 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
   }
 
-  type Checkout {
-    session: ID
-  }
-`;
+  `;
 
 module.exports = typeDefs;
